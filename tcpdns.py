@@ -325,7 +325,7 @@ def thread_main(cfg):
 
 def gevent_main(cfg):
     try:
-        GeventUDPServer('%s:53' % cfg["host"]).serve_forever()
+        GeventUDPServer('%s:%d' % (cfg["host"] , cfg["port"])).serve_forever()
     except NameError:
         sys.exit(1)
 
